@@ -38,40 +38,11 @@ class Api<T> {
 class ListResponese<T> {
   List<T> listItem = [];
   List<T> item = [];
-
   ListResponese(Map<String, dynamic> json, String itemRoot,
       T Function(dynamic itemJson) itemConverter) {
-
-      // debugger();
       var itemEqueck = json[itemRoot];
-
-
       if(itemEqueck is List){
          listItem = itemEqueck.map(itemConverter).toList();
       }
-
-    // item = jsonItem.map((i) => itemConverter).toList();
-    // item = listItem.map(itemConverter).toList();
-
-    // if(jsonItems is Map){
-    //   debugger();
-    //   jsonItems = jsonItem.map(itemConverter).toList();
-    //   debugger();
-    // }
-    // debugger(); // var jsonItems = jsonItem[itemsRoot];
-    // listItem.map((i) {
-    //   var childItem = i[itemRootTwo];
-    //   item = childItem.map(itemConverter).toList;
-    // });
-    // debugger();
-    // print('Lỗi');
-    // if(jsonItems is Map){
-    //   item = jsonItems['mag'].map(itemConverter).toList();
-    // }
-    // if(jsonItem['properties'] != null){
-    //   debugger();
-    //   properti = Properti.fromJson(jsonItem['properties']);
-    //   print(properti);
-    // }
   }
 }

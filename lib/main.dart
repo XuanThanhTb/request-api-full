@@ -45,23 +45,21 @@ class SendDataState extends State<SendData> {
         .getGitHubs(
             "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson")
         .then((response) {
-          // debugger();
       if (!mounted) {
         return;
       }
-     
-        setState(() {
-          github = response.data.listItem;
-        });
+
+      setState(() {
+        github = response.data.listItem;
+      });
     });
   }
 
-  _onText(){
+  _onText() {
     return Container(
-      child: Column(
-        children: github.map((item) => Text(item.properties.place)).toList(),
-      )
-    );
+        child: Column(
+      children: github.map((item) => Text(item.properties.place)).toList(),
+    ));
   }
 
   @override

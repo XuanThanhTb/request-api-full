@@ -1,11 +1,6 @@
-import 'dart:collection';
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:request_api_equeck/api.dart';
 import 'package:request_api_equeck/model/equeck_api.dart';
-import 'package:request_api_equeck/model/properties.dart';
-
 class ApiService {
   final _dio = Dio();
   Future<Api<Equeck>> getUrl(String url) async {
